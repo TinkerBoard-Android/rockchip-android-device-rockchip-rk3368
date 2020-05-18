@@ -14,12 +14,5 @@
 # limitations under the License.
 #
 
-PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/rk3368_Android10/rk3368_Android10.mk \
-    $(LOCAL_DIR)/rk3368_pie/rk3368_pie.mk \
-
-COMMON_LUNCH_CHOICES := \
-    rk3368_Android10-userdebug \
-    rk3368_Android10-user \
-    rk3368_pie-userdebug \
-    rk3368_pie-user
+# copy mount rc file for FDE
+PRODUCT_COPY_FILES += $(LOCAL_PATH)/init.mount_all.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/hw/init.mount_all.rc
